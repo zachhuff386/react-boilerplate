@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>React Boilerplate</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="vendor/system/system.js"></script>
+    <script src="bower_components/react/react.js"></script>
+    <script>
+      System.config({
+        baseURL: './lib/',
+        paths: {
+          react: '../bower_components/react/react.js'
+        }
+      });
+    </script>
+
+    <link rel="import" href="bower_components/polymer/polymer.html">
+
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+
+    <style>
+      * {
+        font-family: Roboto, Noto, sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      System.import('main');
+    </script>
+  </body>
+</html>
