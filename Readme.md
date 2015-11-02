@@ -1,7 +1,7 @@
 ### bower packages
 
 ```
-bower install --save react Polymer/polymer PolymerElements/paper-elements
+bower install --save react system.js Polymer/polymer PolymerElements/paper-elements
 ```
 
 ### typescript definitions
