@@ -9,5 +9,7 @@ Thumbs.db
 *.pyc
 *.egg
 *.egg-info
+*.js
+*.map
 vendor/*
 typings/*
