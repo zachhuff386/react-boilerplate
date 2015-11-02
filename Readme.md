@@ -1,4 +1,4 @@
-### install packages
+### react-boilerplate
 
 ```
 bower install
