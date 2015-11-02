@@ -1,6 +1,6 @@
 {
   "name": "paper-card",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "Material design piece of paper with unique related data",
   "authors": [
     "The Polymer Authors"
@@ -22,8 +22,9 @@
   "homepage": "https://github.com/PolymerElements/paper-card",
   "ignore": [],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "paper-material": "PolymerElements/paper-material#^1.0.0"
+    "polymer": "Polymer/polymer#^1.1.0",
+    "paper-material": "PolymerElements/paper-material#^1.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
@@ -35,11 +36,11 @@
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
     "paper-styles": "PolymerElements/paper-styles#^1.0.0"
   },
-  "_release": "1.0.0",
+  "_release": "1.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.0",
-    "commit": "a07c129792db155a2b7f694c37544d0841462a77"
+    "tag": "v1.0.7",
+    "commit": "a1a0b2789b657a9b2bce17483ecc495ce968b104"
   },
   "_source": "git://github.com/PolymerElements/paper-card.git",
   "_target": "^1.0.0",
