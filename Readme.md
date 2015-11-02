@@ -1,17 +1,10 @@
-### bower packages
+### install packages
 
 ```
-bower install --save react system.js Polymer/polymer PolymerElements/paper-elements
+bower install
+tsd install
 ```
 
-### typescript definitions
+### intellij options
 
-```
-tsd install es6-promise react polymer
-```
-
-### tyescript options
-
-```
--m commonjs -t es5
-```
+![intellij](img/intellij.png)
