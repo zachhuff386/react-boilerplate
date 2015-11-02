@@ -1,4 +1,5 @@
 /// <reference path="../typings/react/react.d.ts" />
+/// <reference path="../typings/polymer/polymer.d.ts" />
 
 declare namespace JSX {
 	interface IntrinsicElements {
