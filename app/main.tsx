@@ -1,6 +1,6 @@
 /// <reference path="references.d.ts" />
-import React = require('react');
-import Test = require('./components/test');
+import * as React from 'react';
+import Test from './components/test';
 
 React.render(
 	<Test title="React Polymer"/>,

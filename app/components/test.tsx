@@ -1,5 +1,6 @@
 /// <reference path="../references.d.ts" />
-import React = require('react');
+import * as React from 'react';
+import Model from '../model';
 
 interface Props {
 	title: string;
@@ -9,7 +10,7 @@ interface State {
 	value: string;
 }
 
-export = class Test extends React.Component<Props, State> {
+export default class Test extends React.Component<Props, State> {
 	css = {
 		headerBox: {
 			width: '100%',
