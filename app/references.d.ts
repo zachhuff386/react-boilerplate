@@ -59,3 +59,38 @@ declare namespace JSX {
 		'paper-tooltip': any,
 	}
 }
+
+declare module "events" {
+    type EventType = string;
+
+    interface EventListener {
+        (...args: any[]): void;
+    }
+
+    class EventEmitter {
+        static defaultMaxListeners: number;
+        static listenerCount(emitter: EventEmitter, type: EventType): number;
+
+        constructor();
+
+        setMaxListeners(n: number): EventEmitter;
+
+        emit(type: EventType, ...args: any[]): boolean;
+
+        addListener(type: EventType, listener: EventListener): EventEmitter;
+
+        on(type: EventType, listener: EventListener): EventEmitter;
+
+        once(type: EventType, listener: EventListener): EventEmitter;
+
+        removeListener(type: EventType, listener: EventListener): EventEmitter;
+
+        removeAllListeners(type: EventType): EventEmitter;
+
+        listeners(type: EventType): EventListener[];
+
+        listenerCount(type: EventType): number;
+    }
+
+    export default EventEmitter
+}
