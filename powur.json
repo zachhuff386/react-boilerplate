@@ -37,10 +37,18 @@
     },
     "jquery": {
         "version": "~2.1.4",
-        "url": "https://github.com/jquery/jquery/archive/{version}.tar.gz",
+        "url": "https://github.com/jquery/jquery/archive/{version}.zip",
         "version_url": "github://github.com/jquery/jquery/tags",
         "include": {
             "{name}-{version}/dist/*": "{name}/"
+        }
+    },
+    "events": {
+        "version": "~1.1.0",
+        "url": "https://github.com/Gozala/events/archive/v{version}.zip",
+        "version_url": "github://github.com/Gozala/events/tags",
+        "include": {
+            "{name}-{version}/*.js": "{name}/"
         }
     },
     "polymer": {
