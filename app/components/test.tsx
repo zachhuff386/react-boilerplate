@@ -1,6 +1,5 @@
 /// <reference path="../references.d.ts" />
 import * as React from 'react';
-import Model from '../model';
 
 interface Props {
 	title: string;
