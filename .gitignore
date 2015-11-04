@@ -13,3 +13,4 @@ Thumbs.db
 *.map
 vendor/*
 typings/*
+powur.py
