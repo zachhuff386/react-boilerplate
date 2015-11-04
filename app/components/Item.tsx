@@ -17,7 +17,6 @@ export default class Item extends React.Component<Props, void> {
 	};
 
 	_onChange(value: string) {
-		console.log('item.change:', value);
 		ItemActions.update(this.props.item.id, value);
 	}
 
