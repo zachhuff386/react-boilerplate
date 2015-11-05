@@ -23,17 +23,17 @@ export default class Input extends React.Component<Props, State> {
 		};
 	}
 
-	componentDidMount() {
+	componentDidMount(): void {
 		this._elem.addEventListener('change',
 				(this._onChange).bind(this));
 	}
 
-	componentWillUnmount() {
+	componentWillUnmount(): void {
 		this._elem.removeEventListener('change',
 				(this._onChange).bind(this));
 	}
 
-	_onKeyUp(evt: React.KeyboardEvent) {
+	_onKeyUp(evt: React.KeyboardEvent): void {
 		var elem = (evt.target as HTMLInputElement);
 
 		if (evt.keyCode === 13) {
@@ -43,13 +43,13 @@ export default class Input extends React.Component<Props, State> {
 		}
 	}
 
-	_onSave() {
+	_onSave(): void {
 		if (this.props.onSave) {
 			this.props.onSave(this.state.value);
 		}
 	}
 
-	_onChange(evt: Event) {
+	_onChange(evt: Event): void {
 		var elem = (evt.target as HTMLInputElement);
 
 		this.setState({
@@ -57,7 +57,7 @@ export default class Input extends React.Component<Props, State> {
 		});
 	}
 
-	render() {
+	render(): JSX.Element {
 		return <paper-input
 				ref={(x: any) => this._elem = x}
 				value={this.state.value}

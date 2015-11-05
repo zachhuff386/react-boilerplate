@@ -1,10 +1,10 @@
 /// <reference path="../References.d.ts"/>
-import AppDispatcher from '../dispatcher/AppDispatcher';
+import Dispatcher from '../dispatcher/Dispatcher';
 import EventEmitter from 'events';
 import * as ItemType from '../types/ItemType';
 import * as GlobalTypes from '../types/GlobalTypes';
 
-var _collection: {[key: string]: ItemType.Item} = {
+var _collection: ItemType.Items = {
 	'1001': {
 		'id': '1001',
 		'content': 'Item One',
@@ -19,7 +19,7 @@ var _collection: {[key: string]: ItemType.Item} = {
 	},
 };
 
-function create(content: string) {
+function create(content: string): void {
 	var id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
 
 	_collection[id] = {
@@ -28,35 +28,35 @@ function create(content: string) {
 	};
 }
 
-function update(id: string, updates: {[key: string]: any}) {
+function update(id: string, updates: {[key: string]: any}): void {
 	Object.assign(_collection[id], updates);
 }
 
-function remove(id: string) {
+function remove(id: string): void {
 	delete _collection[id];
 }
 
 class _ItemStore extends EventEmitter {
-	items() {
+	items(): ItemType.Items {
 		return _collection;
 	}
 
-	emitChange() {
+	emitChange(): void {
 		this.emit(GlobalTypes.CHANGE)
 	}
 
-	addChangeListener(callback: () => void) {
+	addChangeListener(callback: () => void): void {
 		this.on(GlobalTypes.CHANGE, callback);
 	}
 
-	removeChangeListener(callback: () => void) {
+	removeChangeListener(callback: () => void): void {
 		this.removeListener(GlobalTypes.CHANGE, callback);
 	}
 }
 var ItemStore = new _ItemStore();
 export default ItemStore;
 
-AppDispatcher.register(function(action) {
+Dispatcher.register(function(action: GlobalTypes.Dispatch): void {
 	switch (action.type) {
 		case ItemType.CREATE:
 			create(action.data.content);

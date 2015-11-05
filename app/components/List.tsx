@@ -35,19 +35,19 @@ export default class List extends React.Component<Props, State> {
 		this.state = getState();
 	}
 
-	componentDidMount() {
+	componentDidMount(): void {
 		ItemStore.addChangeListener((this._onChange).bind(this));
 	}
 
-	componentWillUnmount() {
+	componentWillUnmount(): void {
 		ItemStore.removeChangeListener((this._onChange).bind(this));
 	}
 
-	_onChange() {
+	_onChange(): void {
 		this.setState(getState());
 	}
 
-	render() {
+	render(): JSX.Element {
 		var items = this.state.items;
 
 		var itemsLabelDom: JSX.Element[] = [];

@@ -8,3 +8,5 @@ export interface Item {
 	id: string;
 	content: string;
 }
+
+export type Items = {[key: string]: Item}

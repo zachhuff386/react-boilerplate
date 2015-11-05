@@ -1,9 +1,9 @@
 /// <reference path="../References.d.ts"/>
-import AppDispatcher from '../dispatcher/AppDispatcher';
+import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemType from '../types/ItemType';
 
-export function create(content: string) {
-	AppDispatcher.dispatch({
+export function create(content: string): void {
+	Dispatcher.dispatch({
 		type: ItemType.CREATE,
 		data: {
 			content: content,
@@ -11,8 +11,8 @@ export function create(content: string) {
 	});
 }
 
-export function update(id: string, content: string) {
-	AppDispatcher.dispatch({
+export function update(id: string, content: string): void {
+	Dispatcher.dispatch({
 		type: ItemType.UPDATE,
 		data: {
 			id: id,
@@ -21,8 +21,8 @@ export function update(id: string, content: string) {
 	});
 }
 
-export function remove(id: string) {
-	AppDispatcher.dispatch({
+export function remove(id: string): void {
+	Dispatcher.dispatch({
 		type: ItemType.REMOVE,
 		data: {
 			id: id,

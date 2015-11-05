@@ -16,11 +16,11 @@ export default class Item extends React.Component<Props, void> {
 		},
 	};
 
-	_onChange(value: string) {
+	_onChange(value: string): void {
 		ItemActions.update(this.props.item.id, value);
 	}
 
-	render() {
+	render(): JSX.Element {
 		return <li>
 			<Input value={this.props.item.content}
 					onSave={(this._onChange).bind(this)} style={this.css.input}/>
