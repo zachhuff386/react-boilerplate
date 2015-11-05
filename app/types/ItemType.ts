@@ -1,4 +1,4 @@
-/// <reference path="../References.d.ts" />
+/// <reference path="../References.d.ts"/>
 
 export const CREATE = 'item_create';
 export const REMOVE = 'item_remove';

@@ -1,4 +1,4 @@
-/// <reference path="../References.d.ts" />
+/// <reference path="../References.d.ts"/>
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import EventEmitter from 'events';
 import * as ItemType from '../types/ItemType';

@@ -1,4 +1,4 @@
-/// <reference path="../References.d.ts" />
+/// <reference path="../References.d.ts"/>
 import * as Flux from 'flux';
 
 interface Dispatch {
