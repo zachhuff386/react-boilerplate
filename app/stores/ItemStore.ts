@@ -2,8 +2,7 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import EventEmitter from 'events';
 import * as ItemType from '../types/ItemType';
-
-var CHANGE_EVENT = 'change';
+import * as GlobalTypes from '../types/GlobalTypes';
 
 var _collection: {[key: string]: ItemType.Item} = {
 	'1001': {
@@ -43,15 +42,15 @@ class _ItemStore extends EventEmitter {
 	}
 
 	emitChange() {
-		this.emit(CHANGE_EVENT)
+		this.emit(GlobalTypes.CHANGE)
 	}
 
 	addChangeListener(callback: () => void) {
-		this.on(CHANGE_EVENT, callback);
+		this.on(GlobalTypes.CHANGE, callback);
 	}
 
 	removeChangeListener(callback: () => void) {
-		this.removeListener(CHANGE_EVENT, callback);
+		this.removeListener(GlobalTypes.CHANGE, callback);
 	}
 }
 var ItemStore = new _ItemStore();
