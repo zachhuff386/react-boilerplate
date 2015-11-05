@@ -48,15 +48,15 @@ export default class List extends React.Component<Props, State> {
 	}
 
 	render(): JSX.Element {
-		var items = this.state.items;
+		let items = this.state.items;
 
-		var itemsLabelDom: JSX.Element[] = [];
-		for (var key in items) {
+		let itemsLabelDom: JSX.Element[] = [];
+		for (let key in items) {
 			itemsLabelDom.push(<li key={key}>{items[key].content}</li>);
 		}
 
-		var itemsDom: JSX.Element[] = [];
-		for (var key in items) {
+		let itemsDom: JSX.Element[] = [];
+		for (let key in items) {
 			itemsDom.push(<Item key={key} item={items[key]}/>);
 		}
 

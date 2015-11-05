@@ -34,7 +34,7 @@ export default class Input extends React.Component<Props, State> {
 	}
 
 	_onKeyUp(evt: React.KeyboardEvent): void {
-		var elem = (evt.target as HTMLInputElement);
+		let elem = (evt.target as HTMLInputElement);
 
 		if (evt.keyCode === 13) {
 			this._onSave();
@@ -50,7 +50,7 @@ export default class Input extends React.Component<Props, State> {
 	}
 
 	_onChange(evt: Event): void {
-		var elem = (evt.target as HTMLInputElement);
+		let elem = (evt.target as HTMLInputElement);
 
 		this.setState({
 			value: elem.value,

@@ -4,7 +4,7 @@ import EventEmitter from 'events';
 import * as ItemType from '../types/ItemType';
 import * as GlobalTypes from '../types/GlobalTypes';
 
-var _collection: ItemType.Items = {
+let _collection: ItemType.Items = {
 	'1001': {
 		'id': '1001',
 		'content': 'Item One',
@@ -20,7 +20,7 @@ var _collection: ItemType.Items = {
 };
 
 function create(content: string): void {
-	var id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
+	let id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
 
 	_collection[id] = {
 		id: id,
@@ -53,7 +53,7 @@ class _ItemStore extends EventEmitter {
 		this.removeListener(GlobalTypes.CHANGE, callback);
 	}
 }
-var ItemStore = new _ItemStore();
+let ItemStore = new _ItemStore();
 export default ItemStore;
 
 Dispatcher.register(function(action: GlobalTypes.Dispatch): void {
