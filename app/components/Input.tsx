@@ -5,7 +5,8 @@ import * as ItemType from '../types/ItemType';
 interface Props {
 	style: any;
 	value: string;
-	onChange: (value: string) => void;
+	onChange?: (value: string) => void;
+	onSave?: (value: string) => void;
 }
 
 interface State {
@@ -27,12 +28,32 @@ export default class Input extends React.Component<Props, State> {
 			value: elem.value,
 		});
 
-		this.props.onChange(elem.value);
+		if (evt.keyCode === 13) {
+			this._onSave();
+		} else if (this.props.onChange) {
+			this.props.onChange(elem.value);
+		}
+	}
+
+	_onSave() {
+		if (this.props.onSave) {
+			this.props.onSave(this.state.value);
+		}
+	}
+
+	_onChange(evt: React.KeyboardEvent) {
+		var elem = (evt.target as HTMLInputElement);
+
+		this.setState({
+			value: elem.value,
+		});
 	}
 
 	render() {
 		return <paper-input value={this.state.value}
 				style={this.props.style}
+				onBlur={(this._onSave).bind(this)}
+				onChange={(this._onChange).bind(this)}
 				onKeyUp={(this._onKeyUp).bind(this)}/>;
 	}
 }
