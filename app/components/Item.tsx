@@ -23,7 +23,7 @@ export default class Item extends React.Component<Props, void> {
 	render() {
 		return <li>
 			<Input value={this.props.item.content}
-					onChange={(this._onChange).bind(this)} style={this.css.input}/>
+					onSave={(this._onChange).bind(this)} style={this.css.input}/>
 		</li>;
 	}
 }
