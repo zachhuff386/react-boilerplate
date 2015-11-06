@@ -9,13 +9,13 @@ interface Props {
 	item: ItemType.Item;
 }
 
-export default class Item extends React.Component<Props, void> {
-	css = {
-		input: {
-			width: '250px',
-		},
-	};
+const css = {
+	input: {
+		width: '250px',
+	},
+};
 
+export default class Item extends React.Component<Props, void> {
 	_onChange = (value: string): void => {
 		ItemActions.update(this.props.item.id, value);
 	};
@@ -23,7 +23,7 @@ export default class Item extends React.Component<Props, void> {
 	render(): JSX.Element {
 		return <li>
 			<Input value={this.props.item.content}
-					onSave={this._onChange} style={this.css.input}/>
+					onSave={this._onChange} style={css.input}/>
 		</li>;
 	}
 }
