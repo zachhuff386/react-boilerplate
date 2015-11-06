@@ -15,7 +15,7 @@ interface State {
 
 function getState(): State {
 	return {
-		items: ItemStore.items(),
+		items: ItemStore.items,
 	};
 }
 

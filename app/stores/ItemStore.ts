@@ -7,7 +7,7 @@ import * as GlobalTypes from '../types/GlobalTypes';
 let _collection: ItemType.Items = {};
 
 class _ItemStore extends EventEmitter {
-	items(): ItemType.Items {
+	get items(): ItemType.Items {
 		return _collection;
 	}
 
