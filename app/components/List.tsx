@@ -19,33 +19,33 @@ function getState(): State {
 	};
 }
 
-export default class List extends React.Component<Props, State> {
-	css = {
-		headerBox: {
-			width: '100%',
-		},
-		header: {
-			margin: '4px',
-			fontSize: '24px',
-		},
-	};
+const css = {
+	headerBox: {
+		width: '100%',
+	},
+	header: {
+		margin: '4px',
+		fontSize: '24px',
+	},
+};
 
+export default class List extends React.Component<Props, State> {
 	constructor(props: Props, context: any) {
 		super(props, context);
 		this.state = getState();
 	}
 
 	componentDidMount(): void {
-		ItemStore.addChangeListener((this._onChange).bind(this));
+		ItemStore.addChangeListener(this._onChange);
 	}
 
 	componentWillUnmount(): void {
-		ItemStore.removeChangeListener((this._onChange).bind(this));
+		ItemStore.removeChangeListener(this._onChange);
 	}
 
-	_onChange(): void {
+	_onChange = (): void => {
 		this.setState(getState());
-	}
+	};
 
 	render(): JSX.Element {
 		let items = this.state.items;
@@ -62,8 +62,8 @@ export default class List extends React.Component<Props, State> {
 
 		return <div>
 			<paper-toolbar class="title">
-				<div className="layout horizontal" style={this.css.headerBox}>
-					<div className="flex" style={this.css.header}>
+				<div className="layout horizontal" style={css.headerBox}>
+					<div className="flex" style={css.header}>
 						{this.props.title}
 					</div>
 					<paper-icon-button icon="menu"/>

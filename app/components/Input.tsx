@@ -33,7 +33,7 @@ export default class Input extends React.Component<Props, State> {
 				(this._onChange).bind(this));
 	}
 
-	_onKeyUp(evt: React.KeyboardEvent): void {
+	_onKeyUp = (evt: React.KeyboardEvent): void => {
 		let elem = (evt.target as HTMLInputElement);
 
 		if (evt.keyCode === 13) {
@@ -41,28 +41,28 @@ export default class Input extends React.Component<Props, State> {
 		} else if (this.props.onChange) {
 			this.props.onChange(elem.value);
 		}
-	}
+	};
 
-	_onSave(): void {
+	_onSave = (): void => {
 		if (this.props.onSave) {
 			this.props.onSave(this.state.value);
 		}
-	}
+	};
 
-	_onChange(evt: Event): void {
+	_onChange = (evt: Event): void => {
 		let elem = (evt.target as HTMLInputElement);
 
 		this.setState({
 			value: elem.value,
 		});
-	}
+	};
 
 	render(): JSX.Element {
 		return <paper-input
 				ref={(x: any) => this._elem = x}
 				value={this.state.value}
 				style={this.props.style}
-				onBlur={(this._onSave).bind(this)}
-				onKeyUp={(this._onKeyUp).bind(this)}/>;
+				onBlur={this._onSave}
+				onKeyUp={this._onKeyUp}/>;
 	}
 }
