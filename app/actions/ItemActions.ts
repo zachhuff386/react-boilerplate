@@ -2,6 +2,12 @@
 import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemType from '../types/ItemType';
 
+export function get(): void {
+	Dispatcher.dispatch({
+		type: ItemType.GET,
+	})
+}
+
 export function create(content: string): void {
 	Dispatcher.dispatch({
 		type: ItemType.CREATE,
