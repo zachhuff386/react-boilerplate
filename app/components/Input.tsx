@@ -24,13 +24,11 @@ export default class Input extends React.Component<Props, State> {
 	}
 
 	componentDidMount(): void {
-		this._elem.addEventListener('change',
-				(this._onChange).bind(this));
+		this._elem.addEventListener('change', this._onChange);
 	}
 
 	componentWillUnmount(): void {
-		this._elem.removeEventListener('change',
-				(this._onChange).bind(this));
+		this._elem.removeEventListener('change', this._onChange);
 	}
 
 	_onKeyUp = (evt: React.KeyboardEvent): void => {
