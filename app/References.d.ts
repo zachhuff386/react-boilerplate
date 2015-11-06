@@ -61,7 +61,7 @@ declare namespace JSX {
 }
 
 declare module "events" {
-    type EventType = string;
+    type EventType = Symbol;
 
     interface EventListener {
         (...args: any[]): void;

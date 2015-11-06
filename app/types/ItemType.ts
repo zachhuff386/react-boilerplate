@@ -1,8 +1,8 @@
 /// <reference path="../References.d.ts"/>
 
-export const CREATE = 'item_create';
-export const REMOVE = 'item_remove';
-export const UPDATE = 'item_update';
+export const CREATE = Symbol('item_create');
+export const REMOVE = Symbol('item_remove');
+export const UPDATE = Symbol('item_update');
 
 export interface Item {
 	id: string;
