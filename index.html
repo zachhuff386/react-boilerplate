@@ -12,7 +12,7 @@
     <script src="vendor/webcomponentsjs/webcomponents-lite.min.js"></script>
     <script src="vendor/systemjs/system.js"></script>
     <script src="vendor/react/react.js"></script>
-    <script>
+    <script type="module">
       System.config({
         baseURL: './app/',
         defaultJSExtensions: true,
@@ -53,7 +53,7 @@
   </head>
   <body>
     <div id="app"></div>
-    <script>
+    <script type="module">
       System.import('App');
     </script>
   </body>
