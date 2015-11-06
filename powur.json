@@ -8,7 +8,8 @@
         "url": "https://github.com/google/traceur-compiler/archive/gh-pages.zip",
         "version_url": "github://github.com/google/traceur-compiler/tags",
         "include": {
-            "traceur-compiler-gh-pages/bin/*": "{name}/"
+            "traceur-compiler-gh-pages/bin/*": "{name}/",
+            "traceur-compiler-gh-pages/src/bootstrap.js": "{name}/"
         }
     },
     "systemjs": {
