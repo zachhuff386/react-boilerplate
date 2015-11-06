@@ -32,6 +32,7 @@ const css = {
 export default class List extends React.Component<Props, State> {
 	constructor(props: Props, context: any) {
 		super(props, context);
+		ItemActions.get();
 		this.state = getState();
 	}
 
