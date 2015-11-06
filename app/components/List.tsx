@@ -10,7 +10,7 @@ interface Props {
 }
 
 interface State {
-	items: {[key: string]: ItemType.Item};
+	items: ItemType.Items;
 }
 
 function getState(): State {
