@@ -1,8 +1,9 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
 import * as ItemActions from '../actions/ItemActions';
-import * as ItemType from '../types/ItemType';
+import * as ItemTypes from '../types/ItemTypes';
 import ItemStore from '../stores/ItemStore';
+import * as ItemUtils from '../utils/ItemUtils';
 import Item from '../components/Item';
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 }
 
 interface State {
-	items: ItemType.Items;
+	items: ItemTypes.Items;
 }
 
 function getState(): State {
@@ -32,7 +33,7 @@ const css = {
 export default class List extends React.Component<Props, State> {
 	constructor(props: Props, context: any) {
 		super(props, context);
-		ItemActions.get();
+		ItemUtils.init();
 		this.state = getState();
 	}
 

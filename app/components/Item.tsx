@@ -1,12 +1,12 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as ItemType from '../types/ItemType';
+import * as ItemTypes from '../types/ItemTypes';
 import * as ItemActions from '../actions/ItemActions';
 import Input from '../components/Input';
 
 interface Props {
 	key: string;
-	item: ItemType.Item;
+	item: ItemTypes.Item;
 }
 
 const css = {

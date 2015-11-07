@@ -1,6 +1,5 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as ItemType from '../types/ItemType';
 
 interface Props {
 	style: any;

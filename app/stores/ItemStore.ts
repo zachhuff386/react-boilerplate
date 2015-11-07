@@ -1,15 +1,15 @@
 /// <reference path="../References.d.ts"/>
 import Dispatcher from '../dispatcher/Dispatcher';
 import EventEmitter from 'events';
-import * as ItemType from '../types/ItemType';
+import * as ItemTypes from '../types/ItemTypes';
 import * as GlobalTypes from '../types/GlobalTypes';
 
-let _collection: ItemType.Items = {};
+let _collection: ItemTypes.Items = {};
 
 class _ItemStore extends EventEmitter {
 	token: string;
 
-	get items(): ItemType.Items {
+	get items(): ItemTypes.Items {
 		return _collection;
 	}
 
@@ -28,7 +28,7 @@ class _ItemStore extends EventEmitter {
 let ItemStore = new _ItemStore();
 export default ItemStore;
 
-function get(): void {
+function loading(): void {
 	_collection = {
 		'loading': {
 			'id': 'loading',
@@ -36,24 +36,14 @@ function get(): void {
 		},
 	};
 	ItemStore.emitChange();
+}
 
-	setTimeout((): void => {
-		_collection = {
-			'1001': {
-				'id': '1001',
-				'content': 'Item One',
-			},
-				'1002': {
-				'id': '1002',
-				'content': 'Item Two',
-			},
-				'1003': {
-				'id': '1003',
-				'content': 'Item Three',
-			},
-		};
-		ItemStore.emitChange();
-	}, 1000);
+function load(data: ItemTypes.ItemsLoad): void {
+	_collection = {};
+	for (let item of data) {
+		_collection[item.id] = item;
+	}
+	ItemStore.emitChange();
 }
 
 function create(content: string): void {
@@ -80,21 +70,25 @@ function remove(id: string): void {
 ItemStore.token = Dispatcher.register(function(
 		action: GlobalTypes.Dispatch): void {
 	switch (action.type) {
-		case ItemType.GET:
-			get();
+		case ItemTypes.LOADING:
+			loading();
 			break;
 
-		case ItemType.CREATE:
+		case ItemTypes.LOAD:
+			load(action.data);
+			break;
+
+		case ItemTypes.CREATE:
 			create(action.data.content);
 			break;
 
-		case ItemType.UPDATE:
+		case ItemTypes.UPDATE:
 			update(action.data.id, {
 				content: action.data.content,
 			});
 			break;
 
-		case ItemType.REMOVE:
+		case ItemTypes.REMOVE:
 			remove(action.data.id);
 			break;
 	}

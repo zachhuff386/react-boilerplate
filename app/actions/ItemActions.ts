@@ -1,16 +1,23 @@
 /// <reference path="../References.d.ts"/>
 import Dispatcher from '../dispatcher/Dispatcher';
-import * as ItemType from '../types/ItemType';
+import * as ItemTypes from '../types/ItemTypes';
 
-export function get(): void {
+export function loading(): void {
 	Dispatcher.dispatch({
-		type: ItemType.GET,
-	})
+		type: ItemTypes.LOADING,
+	});
+}
+
+export function load(data: ItemTypes.ItemsLoad): void {
+	Dispatcher.dispatch({
+		type: ItemTypes.LOAD,
+		data: data,
+	});
 }
 
 export function create(content: string): void {
 	Dispatcher.dispatch({
-		type: ItemType.CREATE,
+		type: ItemTypes.CREATE,
 		data: {
 			content: content,
 		},
@@ -19,7 +26,7 @@ export function create(content: string): void {
 
 export function update(id: string, content: string): void {
 	Dispatcher.dispatch({
-		type: ItemType.UPDATE,
+		type: ItemTypes.UPDATE,
 		data: {
 			id: id,
 			content: content,
@@ -29,7 +36,7 @@ export function update(id: string, content: string): void {
 
 export function remove(id: string): void {
 	Dispatcher.dispatch({
-		type: ItemType.REMOVE,
+		type: ItemTypes.REMOVE,
 		data: {
 			id: id,
 		},
