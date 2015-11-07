@@ -94,3 +94,6 @@ declare module "events" {
 
     export default EventEmitter
 }
+
+declare type PromiseResolve = (value?: any) => void;
+declare type PromiseReject = (reason?: any) => void;
