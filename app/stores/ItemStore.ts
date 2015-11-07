@@ -7,6 +7,8 @@ import * as GlobalTypes from '../types/GlobalTypes';
 let _collection: ItemType.Items = {};
 
 class _ItemStore extends EventEmitter {
+	token: string;
+
 	get items(): ItemType.Items {
 		return _collection;
 	}
@@ -75,7 +77,8 @@ function remove(id: string): void {
 	ItemStore.emitChange();
 }
 
-Dispatcher.register(function(action: GlobalTypes.Dispatch): void {
+ItemStore.token = Dispatcher.register(function(
+		action: GlobalTypes.Dispatch): void {
 	switch (action.type) {
 		case ItemType.GET:
 			get();
