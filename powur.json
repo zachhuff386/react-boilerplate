@@ -52,6 +52,30 @@
             "{name}-{version}/*.js": "{name}/"
         }
     },
+    "superagent": {
+        "version": "~1.4.0",
+        "url": "https://github.com/visionmedia/superagent/archive/v{version}.zip",
+        "version_url": "github://github.com/visionmedia/superagent/tags",
+        "include": {
+            "{name}-{version}/lib/client.js": "{name}/{name}.js"
+        }
+    },
+    "reduce": {
+        "version": "~1.0.1",
+        "url": "https://github.com/RedVentures/reduce/archive/{version}.zip",
+        "version_url": "github://github.com/RedVentures/reduce/tags",
+        "include": {
+            "{name}-{version}/index.js": "{name}/{name}.js"
+        }
+    },
+    "emitter": {
+        "version": "~1.2.0",
+        "url": "https://github.com/component/emitter/archive/{version}.zip",
+        "version_url": "github://github.com/component/emitter/tags",
+        "include": {
+            "{name}-{version}/index.js": "{name}/{name}.js"
+        }
+    },
     "polymer": {
         "version": "~1.0.0",
         "url": "http://zipper.bowerarchiver.appspot.com/archive?polymer=Polymer/polymer#{version}",
