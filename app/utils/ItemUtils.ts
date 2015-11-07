@@ -3,8 +3,8 @@ import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemTypes from '../types/ItemTypes';
 import * as ItemActions from '../actions/ItemActions';
 
-export function init() {
-	return new Promise((resolve: PromiseResolve) => {
+export function init(): Promise<string> {
+	return new Promise<string>((resolve): void => {
 		let data: ItemTypes.ItemsLoad = [
 			{
 				id: '1001',
