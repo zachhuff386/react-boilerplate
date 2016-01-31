@@ -4,7 +4,7 @@
         "temp_path": "vendor/powur_temp"
     },
     "traceur": {
-        "version": "~0.0.92",
+        "version": "~0.0.102",
         "url": "https://github.com/google/traceur-compiler/archive/gh-pages.zip",
         "version_url": "github://github.com/google/traceur-compiler/tags",
         "include": {
@@ -13,7 +13,7 @@
         }
     },
     "systemjs": {
-        "version": "~0.19.5",
+        "version": "~0.19.17",
         "url": "https://github.com/systemjs/systemjs/archive/{version}.zip",
         "version_url": "github://github.com/systemjs/systemjs/releases",
         "include": {
@@ -21,7 +21,7 @@
         }
     },
     "react": {
-        "version": "~0.14.2",
+        "version": "~0.14.7",
         "url": "https://github.com/facebook/react/releases/download/v{version}/react-{version}.zip",
         "version_url": "github://github.com/facebook/react/releases",
         "include": {
@@ -37,7 +37,7 @@
         }
     },
     "jquery": {
-        "version": "~2.1.4",
+        "version": "~2.2.0",
         "url": "https://github.com/jquery/jquery/archive/{version}.zip",
         "version_url": "github://github.com/jquery/jquery/tags",
         "include": {
@@ -53,7 +53,7 @@
         }
     },
     "superagent": {
-        "version": "~1.4.0",
+        "version": "~1.7.2",
         "url": "https://github.com/visionmedia/superagent/archive/v{version}.zip",
         "version_url": "github://github.com/visionmedia/superagent/tags",
         "include": {
@@ -61,7 +61,7 @@
         }
     },
     "reduce": {
-        "version": "~1.0.1",
+        "version": "~1.0.2",
         "url": "https://github.com/RedVentures/reduce/archive/{version}.zip",
         "version_url": "github://github.com/RedVentures/reduce/tags",
         "include": {
@@ -77,7 +77,7 @@
         }
     },
     "polymer": {
-        "version": "~1.0.0",
+        "version": "~1.2.4",
         "url": "http://zipper.bowerarchiver.appspot.com/archive?polymer=Polymer/polymer#{version}",
         "version_url": "github://github.com/Polymer/polymer/releases",
         "include": {
@@ -85,7 +85,7 @@
         }
     },
     "paper-elements": {
-        "version": "~1.0.0",
+        "version": "~1.0.7",
         "url": "http://zipper.bowerarchiver.appspot.com/archive?polymer=PolymerElements/paper-elements#{version}",
         "version_url": "github://github.com/PolymerElements/paper-elements/releases",
         "include": {
