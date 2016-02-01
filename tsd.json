@@ -11,6 +11,9 @@
     "react/react.d.ts": {
       "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
     },
+    "react/react-dom.d.ts": {
+      "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
+    },
     "polymer/polymer.d.ts": {
       "commit": "3d2f9971a107e2eee2de3ec5318f5c54071e16ed"
     },
