@@ -22,6 +22,7 @@ function getState(): State {
 
 const css = {
 	headerBox: {
+		color: '#fff',
 		width: '100%',
 	},
 	header: {
