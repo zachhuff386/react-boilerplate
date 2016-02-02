@@ -248,5 +248,15 @@
             "{name}-{version}/*.js": "{name}/",
             "{name}-{version}/*.css": "{name}/"
         }
+    },
+    "re-captcha": {
+        "version": "~1.1.0",
+        "url": "https://github.com/cbalit/re-captcha/archive/v{version}.zip",
+        "version_url": "github://github.com/cbalit/re-captcha/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
     }
 }

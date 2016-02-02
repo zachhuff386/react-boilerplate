@@ -81,6 +81,7 @@ declare namespace JSX {
 		'google-streetview-pano': any,
 		'google-youtube': any,
 		'google-youtube-upload': any,
+		're-captcha': any,
 	}
 }
 
