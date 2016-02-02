@@ -93,7 +93,160 @@
             "components/bower_components/**/*.css": "",
             "components/bower_components/**/*.js": "",
             "components/bower_components/**/*.map": "",
-            "components/bower_components/**/*.gz": ""
+            "components/bower_components/**/*.gz": "",
+            "components/bower_components/**/*.png": "",
+            "components/bower_components/**/*.svg": "",
+            "components/bower_components/**/*.jpg": ""
+        }
+    },
+    "iron-ajax": {
+        "version": "~1.1.1",
+        "url": "https://github.com/PolymerElements/iron-ajax/archive/v{version}.zip",
+        "version_url": "github://github.com/PolymerElements/iron-ajax/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "iron-jsonp-library": {
+        "version": "~1.0.4",
+        "url": "https://github.com/PolymerElements/iron-jsonp-library/archive/v{version}.zip",
+        "version_url": "github://github.com/PolymerElements/iron-jsonp-library/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-apis": {
+        "version": "~1.1.3",
+        "url": "https://github.com/GoogleWebComponents/google-apis/archive/{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-apis/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-analytics": {
+        "version": "~1.2.1",
+        "url": "https://github.com/GoogleWebComponents/google-analytics/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-analytics/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-calendar": {
+        "version": "~1.0.1",
+        "url": "https://github.com/GoogleWebComponents/google-calendar/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-calendar/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-castable-video": {
+        "version": "~1.0.2",
+        "url": "https://github.com/GoogleWebComponents/google-castable-video/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-castable-video/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-chart": {
+        "version": "~1.0.4",
+        "url": "https://github.com/GoogleWebComponents/google-chart/archive/{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-chart/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-feeds": {
+        "version": "~1.0.2",
+        "url": "https://github.com/GoogleWebComponents/google-feeds/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-feeds/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-hangout-button": {
+        "version": "~1.0.1",
+        "url": "https://github.com/GoogleWebComponents/google-hangout-button/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-hangout-button/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-map": {
+        "version": "~1.1.9",
+        "url": "https://github.com/GoogleWebComponents/google-map/archive/{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-map/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-sheets": {
+        "version": "~1.0.5",
+        "url": "https://github.com/GoogleWebComponents/google-sheets/archive/{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-sheets/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-signin": {
+        "version": "~1.2.0",
+        "url": "https://github.com/GoogleWebComponents/google-signin/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-signin/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-streetview-pano": {
+        "version": "~1.0.3",
+        "url": "https://github.com/GoogleWebComponents/google-streetview-pano/archive/{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-streetview-pano/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-youtube": {
+        "version": "~1.1.3",
+        "url": "https://github.com/GoogleWebComponents/google-youtube/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-youtube/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
+        }
+    },
+    "google-youtube-upload": {
+        "version": "~1.1.2",
+        "url": "https://github.com/GoogleWebComponents/google-youtube-upload/archive/v{version}.zip",
+        "version_url": "github://github.com/GoogleWebComponents/google-youtube-upload/tags",
+        "include": {
+            "{name}-{version}/*.html": "{name}/",
+            "{name}-{version}/*.js": "{name}/",
+            "{name}-{version}/*.css": "{name}/"
         }
     }
 }
