@@ -29,6 +29,9 @@ const css = {
 		margin: '4px',
 		fontSize: '24px',
 	},
+	list: {
+		listStyle: 'none',
+	},
 	map: {
 		margin: '20px',
 		width: '250px',
@@ -83,7 +86,7 @@ export default class List extends React.Component<Props, State> {
 			<ul>
 				{itemsLabelDom}
 			</ul>
-			<ul>
+			<ul style={css.list}>
 				{itemsDom}
 			</ul>
 			<google-map style={css.map} latitude="37.779" longitude="-122.3892"
