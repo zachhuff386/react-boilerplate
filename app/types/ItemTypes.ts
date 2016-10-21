@@ -14,7 +14,7 @@ export type Items = {[key: string]: Item}
 
 export interface ItemDispatch {
 	type: Symbol;
-	data: {
+	data?: {
 		id: string;
 		content: string;
 		items: Item[];
