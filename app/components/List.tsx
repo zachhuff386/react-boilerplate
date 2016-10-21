@@ -78,7 +78,7 @@ export default class List extends React.Component<Props, State> {
 			<paper-toolbar class="title">
 				<div className="layout horizontal" style={css.headerBox}>
 					<div className="flex" style={css.header}>
-						{this.props.title}
+						{this.props.title} <iron-icon icon="icons:info"/>
 					</div>
 					<paper-icon-button icon="menu"/>
 				</div>
