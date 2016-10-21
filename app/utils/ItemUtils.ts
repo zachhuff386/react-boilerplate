@@ -1,5 +1,4 @@
 /// <reference path="../References.d.ts"/>
-import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemTypes from '../types/ItemTypes';
 import * as ItemActions from '../actions/ItemActions';
 
