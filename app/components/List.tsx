@@ -1,6 +1,5 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as ItemActions from '../actions/ItemActions';
 import * as ItemTypes from '../types/ItemTypes';
 import ItemStore from '../stores/ItemStore';
 import * as ItemUtils from '../utils/ItemUtils';
