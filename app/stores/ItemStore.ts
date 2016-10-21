@@ -3,8 +3,7 @@ import Dispatcher from '../dispatcher/Dispatcher';
 import EventEmitter from 'events';
 import * as ItemTypes from '../types/ItemTypes';
 import * as GlobalTypes from '../types/GlobalTypes';
-
-let _collection: ItemTypes.Items = {};
+import * as MiscUtils from '../utils/MiscUtils';
 
 class _ItemStore extends EventEmitter {
 	token: string;
@@ -47,7 +46,7 @@ function load(data: ItemTypes.ItemsLoad): void {
 }
 
 function create(content: string): void {
-	let id = (+new Date() + Math.floor(Math.random() * 999999)).toString(36);
+	let id = MiscUtils.uuid();
 
 	_collection[id] = {
 		id: id,
