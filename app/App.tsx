@@ -5,5 +5,5 @@ import List from './components/List';
 
 ReactDOM.render(
 	<List title="React Polymer"/>,
-	document.getElementById('app')
+	document.getElementById('app'),
 );
