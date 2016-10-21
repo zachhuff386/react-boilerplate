@@ -8,7 +8,7 @@ export function loading(): void {
 	});
 }
 
-export function load(data: ItemTypes.ItemsLoad): void {
+export function load(items: ItemTypes.Item[]): void {
 	Dispatcher.dispatch({
 		type: ItemTypes.LOAD,
 		data: data,

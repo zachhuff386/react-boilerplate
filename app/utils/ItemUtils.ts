@@ -5,7 +5,7 @@ import * as ItemActions from '../actions/ItemActions';
 
 export function init(): Promise<string> {
 	return new Promise<string>((resolve): void => {
-		let data: ItemTypes.ItemsLoad = [
+		let data: ItemTypes.Item[] = [
 			{
 				id: '1001',
 				content: 'Item One',

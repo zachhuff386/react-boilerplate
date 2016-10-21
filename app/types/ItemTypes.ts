@@ -10,5 +10,4 @@ export interface Item {
 	content: string;
 }
 
-export type ItemsLoad = Item[];
 export type Items = {[key: string]: Item}
