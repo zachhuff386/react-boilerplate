@@ -1,5 +1,4 @@
 /// <reference path="../References.d.ts"/>
-
 export const LOADING = Symbol('item_loading');
 export const LOAD = Symbol('item_load');
 export const CREATE = Symbol('item_create');

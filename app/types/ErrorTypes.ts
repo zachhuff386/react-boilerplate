@@ -1,5 +1,4 @@
 /// <reference path="../References.d.ts"/>
-
 export const CREATE = Symbol('error_create');
 export const REMOVE = Symbol('error_remove');
 

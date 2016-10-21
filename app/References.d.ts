@@ -1,5 +1,4 @@
 /// <reference path="../typings/index.d.ts" />
-
 declare namespace JSX {
 	interface IntrinsicElements {
 		'iron-a11y-announcer': any,

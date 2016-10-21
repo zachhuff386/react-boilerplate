@@ -1,5 +1,4 @@
 /// <reference path="../References.d.ts"/>
-
 export const CHANGE = Symbol('change');
 
 export interface Dispatch {
