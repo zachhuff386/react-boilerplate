@@ -6,10 +6,11 @@ import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
 class _ItemStore extends EventEmitter {
+	_state: ItemTypes.Items = {};
 	token: string;
 
 	get items(): ItemTypes.Items {
-		return _collection;
+		return this._state;
 	}
 
 	emitChange(): void {
@@ -28,7 +29,7 @@ let ItemStore = new _ItemStore();
 export default ItemStore;
 
 function loading(): void {
-	_collection = {
+	ItemStore._state = {
 		'loading': {
 			'id': 'loading',
 			'content': 'Loading...',
@@ -37,10 +38,10 @@ function loading(): void {
 	ItemStore.emitChange();
 }
 
-function load(data: ItemTypes.ItemsLoad): void {
-	_collection = {};
+function load(data: ItemTypes.Item[]): void {
+	ItemStore._state = {};
 	for (let item of data) {
-		_collection[item.id] = item;
+		ItemStore._state[item.id] = item;
 	}
 	ItemStore.emitChange();
 }
@@ -48,7 +49,7 @@ function load(data: ItemTypes.ItemsLoad): void {
 function create(content: string): void {
 	let id = MiscUtils.uuid();
 
-	_collection[id] = {
+	ItemStore._state[id] = {
 		id: id,
 		content: content,
 	};
@@ -57,24 +58,24 @@ function create(content: string): void {
 }
 
 function update(id: string, updates: {[key: string]: any}): void {
-	Object.assign(_collection[id], updates);
+	Object.assign(ItemStore._state[id], updates);
 	ItemStore.emitChange();
 }
 
 function remove(id: string): void {
-	delete _collection[id];
+	delete ItemStore._state[id];
 	ItemStore.emitChange();
 }
 
 ItemStore.token = Dispatcher.register(function(
-		action: GlobalTypes.Dispatch): void {
+		action: ItemTypes.ItemDispatch): void {
 	switch (action.type) {
 		case ItemTypes.LOADING:
 			loading();
 			break;
 
 		case ItemTypes.LOAD:
-			load(action.data);
+			load(action.data.items);
 			break;
 
 		case ItemTypes.CREATE:

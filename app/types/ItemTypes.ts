@@ -1,9 +1,9 @@
 /// <reference path="../References.d.ts"/>
-export const LOADING = Symbol('item_loading');
-export const LOAD = Symbol('item_load');
-export const CREATE = Symbol('item_create');
-export const REMOVE = Symbol('item_remove');
-export const UPDATE = Symbol('item_update');
+export const LOADING = Symbol('item.loading');
+export const LOAD = Symbol('item.load');
+export const CREATE = Symbol('item.create');
+export const REMOVE = Symbol('item.remove');
+export const UPDATE = Symbol('item.update');
 
 export interface Item {
 	id: string;
@@ -11,3 +11,12 @@ export interface Item {
 }
 
 export type Items = {[key: string]: Item}
+
+export interface ItemDispatch {
+	type: Symbol;
+	data: {
+		id: string;
+		content: string;
+		items: Item[];
+	};
+}
