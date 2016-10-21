@@ -28,6 +28,22 @@
             "{name}-{version}/build/*": "{name}/"
         }
     },
+    "redux": {
+        "version": "~3.6.0",
+        "url": "https://registry.npmjs.org/redux/-/redux-{version}.tgz",
+        "version_url": "github://github.com/reactjs/redux/tags",
+        "include": {
+            "package/dist/*": "{name}/"
+        }
+    },
+    "react-redux": {
+        "version": "~4.4.5",
+        "url": "https://registry.npmjs.org/react-redux/-/react-redux-{version}.tgz",
+        "version_url": "github://github.com/reactjs/react-redux/tags",
+        "include": {
+            "package/dist/*": "{name}/"
+        }
+    },
     "flux": {
         "version": "~3.1.0",
         "url": "https://github.com/facebook/flux/archive/{version}.zip",
