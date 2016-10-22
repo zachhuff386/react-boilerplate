@@ -29,6 +29,14 @@
             "{name}.min.js": "{name}/"
         }
     },
+    "react-faux-dom": {
+        "version": "3.0.0",
+        "url": "https://registry.npmjs.org/react-faux-dom/-/react-faux-dom-{version}.tgz",
+        "version_url": "github://github.com/Olical/react-faux-dom/tags",
+        "include": {
+            "package/dist/*": "{name}/"
+        }
+    },
     "react": {
         "version": "15.3.2",
         "url": "https://github.com/facebook/react/releases/download/v{version}/react-{version}.zip",
