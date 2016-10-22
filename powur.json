@@ -20,6 +20,15 @@
             "{name}-{version}/dist/*": "{name}/"
         }
     },
+    "d3": {
+        "version": "4.2.8",
+        "url": "https://github.com/d3/d3/releases/download/v{version}/d3.zip",
+        "version_url": "github://github.com/d3/d3/tags",
+        "include": {
+            "{name}.js": "{name}/",
+            "{name}.min.js": "{name}/"
+        }
+    },
     "react": {
         "version": "15.3.2",
         "url": "https://github.com/facebook/react/releases/download/v{version}/react-{version}.zip",
