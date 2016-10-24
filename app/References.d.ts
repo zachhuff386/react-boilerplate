@@ -137,9 +137,12 @@ declare module 'chartjs' {
 	}
 
 	export interface ChartDataSet {
-		label: string;
-		fillColor: string;
-		strokeColor: string;
+		label?: string;
+		fillColor?: string;
+		strokeColor?: string;
+		borderColor?: string | string[];
+		backgroundColor?: string | string[];
+		borderWidth?: number;
 
 		/* Line, Radar */
 		pointColor?: string;
