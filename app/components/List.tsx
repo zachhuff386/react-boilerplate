@@ -40,6 +40,8 @@ const css = {
 };
 
 export default class List extends React.Component<Props, State> {
+	chart: ChartJS.Chart;
+
 	constructor(props: Props, context: any) {
 		super(props, context);
 		ItemUtils.init();
@@ -59,7 +61,7 @@ export default class List extends React.Component<Props, State> {
 		let elem = document.getElementById('chart') as HTMLCanvasElement;
 		let ctx = elem.getContext('2d');
 
-		let chart = new ChartJS.Chart(ctx, {
+		this.chart = new ChartJS.Chart(ctx, {
 			type: 'bar',
 			data: {
 				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
