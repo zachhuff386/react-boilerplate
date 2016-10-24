@@ -136,25 +136,6 @@ declare module 'chartjs' {
 		static Radar(ctx: CanvasRenderingContext2D, options?: any): Chart;
 	}
 
-	export interface ChartDataSet {
-		label?: string;
-		fillColor?: string;
-		strokeColor?: string;
-		borderColor?: string | string[];
-		backgroundColor?: string | string[];
-		borderWidth?: number;
-
-		/* Line, Radar */
-		pointColor?: string;
-		pointStrokeColor?: string;
-		pointHighlightFill?: string;
-		pointHighlightStroke?: string;
-
-		/* Bar */
-		highlightFill?: string;
-		highlightStroke?: string;
-		data: number[];
-	}
 	export interface LinearChartData {
 		labels: string[];
 		datasets: ChartDataSet[];
@@ -177,7 +158,7 @@ declare module 'chartjs' {
 		pointHoverBackgroundColor?: string[];
 		pointHoverBorderColor?: string[];
 		pointHoverBorderWidth?: number[];
-		pointStyle?: any
+		pointStyle?: any;
 	}
 
 	export interface CircularChartData {
@@ -185,6 +166,22 @@ declare module 'chartjs' {
 		color?: string;
 		highlight?: string;
 		label?: string;
+	}
+
+	export interface ChartDataSet {
+		label?: string;
+		fillColor?: string;
+		strokeColor?: string;
+		borderColor?: string | string[];
+		backgroundColor?: string | string[];
+		borderWidth?: number;
+		pointColor?: string;
+		pointStrokeColor?: string;
+		pointHighlightFill?: string;
+		pointHighlightStroke?: string;
+		highlightFill?: string;
+		highlightStroke?: string;
+		data: number[];
 	}
 
 	export interface ChartSettings {
