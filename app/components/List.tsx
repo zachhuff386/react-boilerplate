@@ -1,10 +1,10 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as ChartJS from 'chartjs';
 import * as ItemTypes from '../types/ItemTypes';
 import ItemStore from '../stores/ItemStore';
 import * as ItemUtils from '../utils/ItemUtils';
 import Item from '../components/Item';
+import Chart from '../components/Chart';
 
 interface Props {
 	title: string;
@@ -40,8 +40,6 @@ const css = {
 };
 
 export default class List extends React.Component<Props, State> {
-	chart: ChartJS.Chart;
-
 	constructor(props: Props, context: any) {
 		super(props, context);
 		ItemUtils.init();
@@ -50,56 +48,10 @@ export default class List extends React.Component<Props, State> {
 
 	componentDidMount(): void {
 		ItemStore.addChangeListener(this._onChange);
-		this.renderChart();
 	}
 
 	componentWillUnmount(): void {
 		ItemStore.removeChangeListener(this._onChange);
-	}
-
-	renderChart(): void {
-		let elem = document.getElementById('chart') as HTMLCanvasElement;
-		let ctx = elem.getContext('2d');
-
-		this.chart = new ChartJS.Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-				datasets: [{
-					data: [12, 19, 3, 5, 2, 3],
-					backgroundColor: [
-						'rgba(255, 99, 132, 0.2)',
-						'rgba(54, 162, 235, 0.2)',
-						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)',
-						'rgba(153, 102, 255, 0.2)',
-						'rgba(255, 159, 64, 0.2)',
-					],
-					borderColor: [
-						'rgba(255,99,132,1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
-						'rgba(153, 102, 255, 1)',
-						'rgba(255, 159, 64, 1)',
-					],
-					borderWidth: 1,
-				}],
-			} as ChartJS.LinearChartData,
-			options: {
-				responsive: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true,
-						},
-					}],
-				},
-			} as ChartJS.ChartSettings,
-		});
 	}
 
 	_onChange = (): void => {
@@ -137,7 +89,7 @@ export default class List extends React.Component<Props, State> {
 			<ul style={css.list}>
 				{itemsDom}
 			</ul>
-			<canvas id="chart" width="280" height="200"/>
+			<Chart/>
 			<google-map style={css.map} latitude="37.779" longitude="-122.3892"
 					min-zoom="9" max-zoom="11" language="en">
 				<google-map-marker latitude="37.779" longitude="-122.3892"
