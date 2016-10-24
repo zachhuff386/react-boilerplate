@@ -84,6 +84,14 @@
             "{name}-{version}/index.js": "{name}/{name}.js"
         }
     },
+    "chartjs": {
+        "version": "2.3.0",
+        "url": "https://github.com/chartjs/Chart.js/releases/download/v{version}/Chart.js.zip",
+        "version_url": "github://github.com/chartjs/Chart.js/tags",
+        "include": {
+            "*.js": "{name}/"
+        }
+    },
     "polymer": {
         "version": "1.7.0",
         "url": "http://zipper.bowerarchiver.appspot.com/archive?polymer=Polymer/polymer#{version}",
