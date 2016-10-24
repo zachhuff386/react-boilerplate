@@ -137,7 +137,7 @@ export default class List extends React.Component<Props, State> {
 			<ul style={css.list}>
 				{itemsDom}
 			</ul>
-			<canvas id="chart" width="300" height="250"/>
+			<canvas id="chart" width="280" height="200"/>
 			<google-map style={css.map} latitude="37.779" longitude="-122.3892"
 					min-zoom="9" max-zoom="11" language="en">
 				<google-map-marker latitude="37.779" longitude="-122.3892"
