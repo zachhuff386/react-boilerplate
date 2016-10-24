@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "chart.js": "registry:npm/chart.js#2.1.4+20160615174920",
     "flux": "registry:npm/flux#2.1.1+20160601175240",
     "react-dom": "registry:npm/react-dom#15.0.1+20160826174104"
   },
