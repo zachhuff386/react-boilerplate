@@ -64,7 +64,6 @@ export default class List extends React.Component<Props, State> {
 			data: {
 				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 				datasets: [{
-					label: 'Example Chart',
 					data: [12, 19, 3, 5, 2, 3],
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
@@ -87,6 +86,9 @@ export default class List extends React.Component<Props, State> {
 			},
 			options: {
 				responsive: false,
+				legend: {
+					display: false,
+				},
 				scales: {
 					yAxes: [{
 						ticks: {
