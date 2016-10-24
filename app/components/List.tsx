@@ -83,7 +83,7 @@ export default class List extends React.Component<Props, State> {
 					],
 					borderWidth: 1,
 				}],
-			},
+			} as ChartJS.LinearChartData,
 			options: {
 				responsive: false,
 				legend: {
@@ -96,7 +96,7 @@ export default class List extends React.Component<Props, State> {
 						},
 					}],
 				},
-			},
+			} as ChartJS.ChartSettings,
 		});
 	}
 
