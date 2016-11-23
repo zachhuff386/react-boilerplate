@@ -62,10 +62,10 @@
     },
     "superagent": {
         "version": "2.3.0",
-        "url": "https://github.com/visionmedia/superagent/archive/v{version}.zip",
+        "url": "https://registry.npmjs.org/superagent/-/superagent-2.3.0.tgz",
         "version_url": "github://github.com/visionmedia/superagent/tags",
         "include": {
-            "{name}-{version}/lib/client.js": "{name}/{name}.js"
+            "package/{name}.js": "{name}/"
         }
     },
     "reduce": {
