@@ -24,19 +24,19 @@ const css = {
 	headerBox: {
 		color: '#fff',
 		width: '100%',
-	},
+	} as React.CSSProperties,
 	header: {
 		margin: '4px',
 		fontSize: '24px',
-	},
+	} as React.CSSProperties,
 	list: {
 		listStyle: 'none',
-	},
+	} as React.CSSProperties,
 	map: {
 		margin: '20px',
 		width: '250px',
 		height: '250px',
-	},
+	} as React.CSSProperties,
 };
 
 export default class List extends React.Component<Props, State> {

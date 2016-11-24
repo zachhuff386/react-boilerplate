@@ -12,7 +12,7 @@ interface Props {
 const css = {
 	input: {
 		width: '250px',
-	},
+	} as React.CSSProperties,
 };
 
 export default class Item extends React.Component<Props, void> {
