@@ -1,9 +1,8 @@
 ### react-boilerplate
 
-Requires [typings](https://github.com/typings/typings)
+Requires [jspm](https://www.npmjs.com/package/jspm)
 
 ```
-wget https://raw.githubusercontent.com/powur/powur/master/powur.py
 npm install
 jspm install
 tsc
