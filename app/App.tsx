@@ -1,9 +1,9 @@
 /// <reference path="References.d.ts"/>
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import List from './components/List';
+import Main from './components/Main';
 
 ReactDOM.render(
-	<List title="React Polymer"/>,
+	<Main/>,
 	document.getElementById('app')
 );
