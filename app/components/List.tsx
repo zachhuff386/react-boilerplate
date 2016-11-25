@@ -1,10 +1,10 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
+import AppBar from 'material-ui/AppBar';
 import * as ItemTypes from '../types/ItemTypes';
 import ItemStore from '../stores/ItemStore';
 import * as ItemUtils from '../utils/ItemUtils';
 import Item from '../components/Item';
-import Chart from '../components/Chart';
 
 interface Props {
 	title: string;
@@ -21,21 +21,12 @@ function getState(): State {
 }
 
 const css = {
-	headerBox: {
+	labels: {
 		color: '#fff',
-		width: '100%',
-	} as React.CSSProperties,
-	header: {
-		margin: '4px',
-		fontSize: '24px',
+		marginTop: '20px',
 	} as React.CSSProperties,
 	list: {
 		listStyle: 'none',
-	} as React.CSSProperties,
-	map: {
-		margin: '20px',
-		width: '250px',
-		height: '250px',
 	} as React.CSSProperties,
 };
 
@@ -75,26 +66,13 @@ export default class List extends React.Component<Props, State> {
 		}
 
 		return <div>
-			<paper-toolbar class="title">
-				<div className="layout horizontal" style={css.headerBox}>
-					<div className="flex" style={css.header}>
-						{this.props.title} <iron-icon icon="icons:info"/>
-					</div>
-					<paper-icon-button icon="menu"/>
-				</div>
-			</paper-toolbar>
-			<ul>
+			<AppBar title={this.props.title}/>
+			<ul style={css.labels}>
 				{itemsLabelDom}
 			</ul>
 			<ul style={css.list}>
 				{itemsDom}
 			</ul>
-			<Chart/>
-			<google-map style={css.map} latitude="37.779" longitude="-122.3892"
-					min-zoom="9" max-zoom="11" language="en">
-				<google-map-marker latitude="37.779" longitude="-122.3892"
-					title="Marker" draggable="true" drag-events/>
-			</google-map>
 		</div>;
 	}
 }
