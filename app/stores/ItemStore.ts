@@ -1,11 +1,11 @@
 /// <reference path="../References.d.ts"/>
 import Dispatcher from '../dispatcher/Dispatcher';
-import EventEmitter from 'events';
+import * as Events from 'events';
 import * as ItemTypes from '../types/ItemTypes';
 import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
-class _ItemStore extends EventEmitter {
+class _ItemStore extends Events.EventEmitter {
 	_state: ItemTypes.Items = {};
 	token: string;
 
