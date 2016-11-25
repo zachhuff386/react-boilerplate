@@ -12,5 +12,5 @@ Thumbs.db
 *.js
 *.map
 vendor/*
-typings/*
-powur.py
+node_modules/*
+jspm_packages/*
