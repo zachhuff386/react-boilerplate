@@ -2,6 +2,14 @@
   font-family: Roboto, Noto, sans-serif;
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background-color: #212121;
 }
