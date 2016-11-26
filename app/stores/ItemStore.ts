@@ -5,7 +5,7 @@ import * as ItemTypes from '../types/ItemTypes';
 import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
-class _ItemStore extends Events.EventEmitter {
+class ItemStore extends Events.EventEmitter {
 	_state: ItemTypes.Items = {};
 	token: string;
 
@@ -25,49 +25,49 @@ class _ItemStore extends Events.EventEmitter {
 		this.removeListener(GlobalTypes.CHANGE, callback);
 	}
 }
-let ItemStore = new _ItemStore();
-export default ItemStore;
+let itemStore = new ItemStore();
+export default itemStore;
 
 function loading(): void {
-	ItemStore._state = {
+	itemStore._state = {
 		'loading': {
 			'id': 'loading',
 			'content': 'Loading...',
 		},
 	};
-	ItemStore.emitChange();
+	itemStore.emitChange();
 }
 
 function load(data: ItemTypes.Item[]): void {
-	ItemStore._state = {};
+	itemStore._state = {};
 	for (let item of data) {
-		ItemStore._state[item.id] = item;
+		itemStore._state[item.id] = item;
 	}
-	ItemStore.emitChange();
+	itemStore.emitChange();
 }
 
 function create(content: string): void {
 	let id = MiscUtils.uuid();
 
-	ItemStore._state[id] = {
+	itemStore._state[id] = {
 		id: id,
 		content: content,
 	};
 
-	ItemStore.emitChange();
+	itemStore.emitChange();
 }
 
 function update(id: string, updates: {[key: string]: any}): void {
-	Object.assign(ItemStore._state[id], updates);
-	ItemStore.emitChange();
+	Object.assign(itemStore._state[id], updates);
+	itemStore.emitChange();
 }
 
 function remove(id: string): void {
-	delete ItemStore._state[id];
-	ItemStore.emitChange();
+	delete itemStore._state[id];
+	itemStore.emitChange();
 }
 
-ItemStore.token = Dispatcher.register(function(
+itemStore.token = Dispatcher.register(function(
 		action: ItemTypes.ItemDispatch): void {
 	switch (action.type) {
 		case ItemTypes.LOADING:

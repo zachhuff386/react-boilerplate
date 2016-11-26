@@ -1,9 +1,9 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import AppBar from 'material-ui/AppBar';
-import styles from '../Styles';
-import * as ItemTypes from '../types/ItemTypes';
+import * as Mui from 'material-ui';
+import Styles from '../Styles';
 import ItemStore from '../stores/ItemStore';
+import * as ItemTypes from '../types/ItemTypes';
 import * as ItemUtils from '../utils/ItemUtils';
 import Item from '../components/Item';
 
@@ -23,7 +23,7 @@ function getState(): State {
 
 const css = {
 	labels: {
-		color: styles.colors.color,
+		color: Styles.colors.color,
 		marginTop: '20px',
 	} as React.CSSProperties,
 	list: {
@@ -67,7 +67,7 @@ export default class List extends React.Component<Props, State> {
 		}
 
 		return <div>
-			<AppBar title={this.props.title}/>
+			<Mui.AppBar title={this.props.title}/>
 			<ul style={css.labels}>
 				{itemsLabelDom}
 			</ul>
