@@ -1,6 +1,7 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
 import AppBar from 'material-ui/AppBar';
+import styles from '../Styles';
 import * as ItemTypes from '../types/ItemTypes';
 import ItemStore from '../stores/ItemStore';
 import * as ItemUtils from '../utils/ItemUtils';
@@ -22,7 +23,7 @@ function getState(): State {
 
 const css = {
 	labels: {
-		color: '#fff',
+		color: styles.colors.color,
 		marginTop: '20px',
 	} as React.CSSProperties,
 	list: {

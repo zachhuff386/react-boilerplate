@@ -26,7 +26,7 @@ export default class Item extends React.Component<Props, void> {
 				id={this.props.item.id}
 				style={css.input}
 				value={this.props.item.content}
-				onChange={this._onChange}/>;
+				onChange={this._onChange}/>
 		</li>;
 	}
 }
