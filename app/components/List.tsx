@@ -1,6 +1,6 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as Mui from 'material-ui';
+import AppBar from 'material-ui/AppBar';
 import Styles from '../Styles';
 import ItemStore from '../stores/ItemStore';
 import * as ItemTypes from '../types/ItemTypes';
@@ -67,7 +67,7 @@ export default class List extends React.Component<Props, State> {
 		}
 
 		return <div>
-			<Mui.AppBar title={this.props.title}/>
+			<AppBar title={this.props.title}/>
 			<ul style={css.labels}>
 				{itemsLabelDom}
 			</ul>

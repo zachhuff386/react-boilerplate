@@ -1,6 +1,6 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import * as Mui from 'material-ui';
+import TextField from 'material-ui/TextField';
 import * as ItemTypes from '../types/ItemTypes';
 import * as ItemActions from '../actions/ItemActions';
 
@@ -22,7 +22,7 @@ export default class Item extends React.Component<Props, void> {
 
 	render(): JSX.Element {
 		return <li>
-			<Mui.TextField
+			<TextField
 				id={this.props.item.id}
 				style={css.input}
 				value={this.props.item.content}
