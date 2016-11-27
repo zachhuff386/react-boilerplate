@@ -48,7 +48,7 @@ export default class List extends React.Component<Props, State> {
 		ItemStore.removeChangeListener(this._onChange);
 	}
 
-	_onChange = (): void => {
+	_onChange(): void {
 		this.setState(getState());
 	}
 
