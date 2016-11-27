@@ -2,19 +2,43 @@
 import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemTypes from '../types/ItemTypes';
 
-export function loading(): void {
+export function sync(): Promise<void> {
+	let loaded = () => {
+		Dispatcher.dispatch({
+			type: ItemTypes.LOADED,
+		});
+	};
+
 	Dispatcher.dispatch({
 		type: ItemTypes.LOADING,
 	});
-}
 
-export function load(items: ItemTypes.Item[]): void {
-	Dispatcher.dispatch({
-		type: ItemTypes.LOAD,
-		data: {
-			items: items,
-		},
-	});
+	return new Promise<void>((resolve): void => {
+		let data: ItemTypes.Item[] = [
+			{
+				id: '1001',
+				content: 'Item One',
+			},
+			{
+				id: '1002',
+				content: 'Item Two',
+			},
+			{
+				id: '1003',
+				content: 'Item Three',
+			},
+		];
+
+		setTimeout(() => {
+			Dispatcher.dispatch({
+				type: ItemTypes.SYNC,
+				data: {
+					items: data,
+				},
+			});
+			resolve();
+		}, 1000);
+	}).then(loaded).catch(loaded);
 }
 
 export function create(content: string): void {

@@ -1,6 +1,7 @@
 /// <reference path="../References.d.ts"/>
 export const LOADING = Symbol('item.loading');
-export const LOAD = Symbol('item.load');
+export const LOADED = Symbol('item.loaded');
+export const SYNC = Symbol('item.sync');
 export const CREATE = Symbol('item.create');
 export const REMOVE = Symbol('item.remove');
 export const UPDATE = Symbol('item.update');

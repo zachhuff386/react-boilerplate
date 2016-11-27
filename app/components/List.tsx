@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import Styles from '../Styles';
 import ItemStore from '../stores/ItemStore';
 import * as ItemTypes from '../types/ItemTypes';
-import * as ItemUtils from '../utils/ItemUtils';
+import * as ItemActions from '../actions/ItemActions';
 import Item from '../components/Item';
 
 interface Props {
@@ -34,7 +34,7 @@ const css = {
 export default class List extends React.Component<Props, State> {
 	constructor(props: Props, context: any) {
 		super(props, context);
-		ItemUtils.init();
+		ItemActions.sync();
 		this.state = getState();
 	}
 
