@@ -13,11 +13,13 @@ interface Props {
 
 interface State {
 	items: ItemTypes.Items;
+	loading: boolean;
 }
 
 function getState(): State {
 	return {
 		items: ItemStore.items,
+		loading: ItemStore.loading,
 	};
 }
 
@@ -60,14 +62,12 @@ export default class List extends React.Component<Props, State> {
 
 		let itemsDom: JSX.Element[] = [];
 		for (let key in items) {
-			if (key === 'loading') {
-				continue;
-			}
 			itemsDom.push(<Item key={key} item={items[key]}/>);
 		}
 
 		return <div>
 			<AppBar title={this.props.title}/>
+			{this.state.loading ? <div>Loading...</div> : null}
 			<ul style={css.labels}>
 				{itemsLabelDom}
 			</ul>
