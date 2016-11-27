@@ -6,8 +6,8 @@ import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
 class ItemStore extends Events.EventEmitter {
-	_loadingState: boolean;
 	_state: ItemTypes.Items = {};
+	_loadingState: boolean;
 	_token = Dispatcher.register((this._callback).bind(this));
 
 	get items(): ItemTypes.Items {
@@ -31,13 +31,17 @@ class ItemStore extends Events.EventEmitter {
 	}
 
 	_loading(): void {
-		this._loadingState = true;
-		this.emitChange();
+		if (this._loadingState !== true) {
+			this._loadingState = true;
+			this.emitChange();
+		}
 	}
 
 	_loaded(): void {
-		this._loadingState = false;
-		this.emitChange();
+		if (this._loadingState !== false) {
+			this._loadingState = false;
+			this.emitChange();
+		}
 	}
 
 	_sync(data: ItemTypes.Item[]): void {
