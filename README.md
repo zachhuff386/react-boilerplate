@@ -11,6 +11,18 @@ go get github.com/pacur/httpserver
 httpserver
 ```
 
+#### lint
+
+```
+tslint -c tslint.json app/**/*.ts*
+```
+
+#### clean
+
+```
+find app/ -name "*.js*" -delete
+```
+
 #### production
 
 ```
