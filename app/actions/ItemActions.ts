@@ -3,12 +3,6 @@ import Dispatcher from '../dispatcher/Dispatcher';
 import * as ItemTypes from '../types/ItemTypes';
 
 export function sync(): Promise<void> {
-	let loaded = () => {
-		Dispatcher.dispatch({
-			type: ItemTypes.LOADED,
-		});
-	};
-
 	Dispatcher.dispatch({
 		type: ItemTypes.LOADING,
 	});
@@ -31,6 +25,9 @@ export function sync(): Promise<void> {
 
 		setTimeout(() => {
 			Dispatcher.dispatch({
+				type: ItemTypes.LOADED,
+			});
+			Dispatcher.dispatch({
 				type: ItemTypes.SYNC,
 				data: {
 					items: data,
@@ -38,7 +35,7 @@ export function sync(): Promise<void> {
 			});
 			resolve();
 		}, 1000);
-	}).then(loaded).catch(loaded);
+	});
 }
 
 export function create(content: string): void {
