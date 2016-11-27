@@ -41,14 +41,14 @@ export default class List extends React.Component<Props, State> {
 	}
 
 	componentDidMount(): void {
-		ItemStore.addChangeListener(this._onChange);
+		ItemStore.addChangeListener(this.onChange);
 	}
 
 	componentWillUnmount(): void {
-		ItemStore.removeChangeListener(this._onChange);
+		ItemStore.removeChangeListener(this.onChange);
 	}
 
-	_onChange(): void {
+	onChange = (): void => {
 		this.setState(getState());
 	}
 

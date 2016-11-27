@@ -16,7 +16,7 @@ const css = {
 };
 
 export default class Item extends React.Component<Props, void> {
-	_onChange = (evt: React.FormEvent<HTMLInputElement>): void => {
+	onChange = (evt: React.FormEvent<HTMLInputElement>): void => {
 		ItemActions.update(this.props.item.id, evt.currentTarget.value);
 	}
 
@@ -26,7 +26,7 @@ export default class Item extends React.Component<Props, void> {
 				id={this.props.item.id}
 				style={css.input}
 				value={this.props.item.content}
-				onChange={this._onChange}/>
+				onChange={this.onChange}/>
 		</li>;
 	}
 }
