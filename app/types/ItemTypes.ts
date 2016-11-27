@@ -11,7 +11,7 @@ export interface Item {
 	content: string;
 }
 
-export type Items = {[key: string]: Item}
+export type Items = {[key: string]: Item};
 
 export interface ItemDispatch {
 	type: Symbol;

@@ -50,18 +50,24 @@ export default class List extends React.Component<Props, State> {
 
 	_onChange = (): void => {
 		this.setState(getState());
-	};
+	}
 
 	render(): JSX.Element {
 		let items = this.state.items;
 
 		let itemsLabelDom: JSX.Element[] = [];
 		for (let key in items) {
+			if (!items.hasOwnProperty(key)) {
+				continue;
+			}
 			itemsLabelDom.push(<li key={key}>{items[key].content}</li>);
 		}
 
 		let itemsDom: JSX.Element[] = [];
 		for (let key in items) {
+			if (!items.hasOwnProperty(key)) {
+				continue;
+			}
 			itemsDom.push(<Item key={key} item={items[key]}/>);
 		}
 

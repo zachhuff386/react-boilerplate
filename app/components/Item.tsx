@@ -18,7 +18,7 @@ const css = {
 export default class Item extends React.Component<Props, void> {
 	_onChange = (evt: React.FormEvent<HTMLInputElement>): void => {
 		ItemActions.update(this.props.item.id, evt.currentTarget.value);
-	};
+	}
 
 	render(): JSX.Element {
 		return <li>

@@ -8,4 +8,4 @@ export interface Error {
 	message?: string;
 }
 
-export type Errors = {[key: string]: Error}
+export type Errors = {[key: string]: Error};
