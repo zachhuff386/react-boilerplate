@@ -64,11 +64,8 @@ export default class List extends React.Component<Props, State> {
 		}
 
 		let itemsDom: JSX.Element[] = [];
-		for (let key in items) {
-			if (!items.hasOwnProperty(key)) {
-				continue;
-			}
-			itemsDom.push(<Item key={key} item={items[key]}/>);
+		for (let item of items) {
+			itemsDom.push(<Item key={item.id} item={item}/>);
 		}
 
 		return <div>
