@@ -6,7 +6,8 @@ import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
 class ItemStore extends Events.EventEmitter {
-	_state: ItemTypes.Items = {};
+	_state: ItemTypes.Items = [];
+	_map: {[key: string]: number} = {};
 	_loadingState: boolean;
 	_token = Dispatcher.register((this._callback).bind(this));
 
@@ -44,30 +45,46 @@ class ItemStore extends Events.EventEmitter {
 		}
 	}
 
-	_sync(data: ItemTypes.Item[]): void {
-		this._state = {};
-		for (let item of data) {
-			this._state[item.id] = item;
+	_sync(data: ItemTypes.Items): void {
+		this._map = {};
+		for (let i = 0; i < data.length; i++) {
+			this._map[data[i].id] = i;
 		}
+		this._state = data;
 		this.emitChange();
 	}
 
 	_create(content: string): void {
 		let id = MiscUtils.uuid();
-		this._state[id] = {
+		this._map[id] = this._state.push({
 			id: id,
 			content: content,
-		};
+		});
 		this.emitChange();
 	}
 
 	_update(id: string, updates: {[key: string]: any}): void {
-		Object.assign(this._state[id], updates);
+		let i = this._map[id];
+		if (i === undefined) {
+			return;
+		}
+		Object.assign(this._state[i], updates);
 		this.emitChange();
 	}
 
 	_remove(id: string): void {
-		delete this._state[id];
+		let n = this._map[id];
+		if (n === undefined) {
+			return;
+		}
+		delete this._map[id];
+
+		this._state.splice(n, 1);
+
+		for (let i = n; i < this._state.length; i++) {
+			this._map[this._state[i].id] = i;
+		}
+
 		this.emitChange();
 	}
 
