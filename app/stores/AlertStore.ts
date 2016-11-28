@@ -32,7 +32,7 @@ class AlertStore extends Events.EventEmitter {
 			id: id,
 			level: level,
 			message: message,
-		});
+		}) - 1;
 		this.emitChange();
 	}
 
