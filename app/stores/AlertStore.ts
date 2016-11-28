@@ -1,16 +1,16 @@
 /// <reference path="../References.d.ts"/>
 import * as Events from 'events';
 import Dispatcher from '../dispatcher/Dispatcher';
-import * as ErrorTypes from '../types/ErrorTypes';
+import * as AlertTypes from '../types/AlertTypes';
 import * as GlobalTypes from '../types/GlobalTypes';
 import * as MiscUtils from '../utils/MiscUtils';
 
-class ErrorStore extends Events.EventEmitter {
-	_state: ErrorTypes.Errors = [];
+class AlertStore extends Events.EventEmitter {
+	_state: AlertTypes.Alerts = [];
 	_map: {[key: string]: number} = {};
 	_token = Dispatcher.register((this._callback).bind(this));
 
-	get errors(): ErrorTypes.Errors {
+	get alerts(): AlertTypes.Alerts {
 		return this._state;
 	}
 
@@ -52,17 +52,17 @@ class ErrorStore extends Events.EventEmitter {
 		this.emitChange();
 	}
 
-	_callback(action: ErrorTypes.ErrorDispatch): void {
+	_callback(action: AlertTypes.AlertDispatch): void {
 		switch (action.type) {
-			case ErrorTypes.CREATE:
+			case AlertTypes.CREATE:
 				this._create(action.data.level, action.data.message);
 				break;
 
-			case ErrorTypes.REMOVE:
+			case AlertTypes.REMOVE:
 				this._remove(action.data.id);
 				break;
 		}
 	}
 }
 
-export default new ErrorStore();
+export default new AlertStore();
