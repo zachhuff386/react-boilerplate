@@ -68,7 +68,10 @@ class ItemStore extends Events.EventEmitter {
 		if (i === undefined) {
 			return;
 		}
-		Object.assign(this._state[i], updates);
+		this._state[i] = {
+			...this._state[i],
+			...updates,
+		};
 		this.emitChange();
 	}
 
