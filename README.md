@@ -6,9 +6,6 @@ Requires [jspm](https://www.npmjs.com/package/jspm)
 npm install
 jspm install
 sed -i 's|lib/node/index.js|lib/client.js|g' jspm_packages/npm/superagent@*.js
-tsc --watch
-go get github.com/pacur/httpserver
-httpserver
 ```
 
 #### lint
@@ -21,6 +18,18 @@ tslint -c tslint.json app/**/*.ts*
 
 ```
 find app/ -name "*.js*" -delete
+rm -rf node_modules
+rm -rf jspm_packages
+rm config.js
+```
+
+### development
+
+```
+go get github.com/pacur/httpserver
+httpserver
+jspm depcache app/App.js
+tsc --watch
 ```
 
 #### production
