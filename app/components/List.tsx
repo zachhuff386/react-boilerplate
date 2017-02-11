@@ -1,8 +1,8 @@
 /// <reference path="../References.d.ts"/>
 import * as React from 'react';
-import AppBar from 'material-ui/AppBar';
-import Styles from '../Styles';
+import * as Blueprint from '@blueprintjs/core';
 import ItemStore from '../stores/ItemStore';
+import * as Alert from '../Alert';
 import * as ItemTypes from '../types/ItemTypes';
 import * as ItemActions from '../actions/ItemActions';
 import Item from '../components/Item';
@@ -25,11 +25,11 @@ function getState(): State {
 
 const css = {
 	labels: {
-		color: Styles.colors.color,
 		marginTop: '20px',
 	} as React.CSSProperties,
 	list: {
 		listStyle: 'none',
+		paddingLeft: '5px',
 	} as React.CSSProperties,
 };
 
@@ -52,6 +52,11 @@ export default class List extends React.Component<Props, State> {
 		this.setState(getState());
 	}
 
+	sync = (): void => {
+		Alert.info('Refeshing');
+		ItemActions.sync();
+	}
+
 	render(): JSX.Element {
 		let items = this.state.items;
 
@@ -68,9 +73,27 @@ export default class List extends React.Component<Props, State> {
 			itemsDom.push(<Item key={item.id} item={item}/>);
 		}
 
+		let loading: JSX.Element;
+		if (this.state.loading) {
+			loading = <Blueprint.Spinner
+				className="pt-small"
+				intent={Blueprint.Intent.PRIMARY}
+			/>;
+		}
+
 		return <div>
-			<AppBar title={this.props.title}/>
-			{this.state.loading ? <div>Loading...</div> : null}
+			<nav className="pt-navbar">
+				<div className="pt-navbar-group pt-align-left">
+					<div className="pt-navbar-heading">{this.props.title}</div>
+					{loading}
+				</div>
+				<div className="pt-navbar-group pt-align-right">
+					<button
+						className="pt-button pt-minimal pt-icon-refresh"
+						onClick={this.sync}
+					/>
+				</div>
+			</nav>
 			<ul style={css.labels}>
 				{itemsLabelDom}
 			</ul>
